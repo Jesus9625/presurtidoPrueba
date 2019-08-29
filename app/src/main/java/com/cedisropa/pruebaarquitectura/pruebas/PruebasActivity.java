@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 
 import static android.view.KeyEvent.KEYCODE_ENTER;
 
-public class PruebasActivity extends AppCompatActivity {
+public class PruebasActivity extends AppCompatActivity implements PruebasView {
 
     @BindView(R.id.txt_numSurt)
     EditText txtNumSurt;
@@ -33,7 +33,7 @@ public class PruebasActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         ResourceProvider resourceProvider = new ResourceProvider(this.getResources());
-        this.viewPresenter = new PruebasPresenter(resourceProvider);
+        this.viewPresenter = new PruebasPresenter(this, resourceProvider);
 
         DatosGenerales dg = new DatosGenerales();
         dg.setIpBodega("10.28.114.110");
@@ -49,10 +49,13 @@ public class PruebasActivity extends AppCompatActivity {
                     int numSurtidor = Integer.valueOf(txtNumSurt.getText().toString());
                     viewPresenter.obtenerNombreSurtido(numSurtidor);
                 }
-
                 return false;
             }
         });
     }
 
+    @Override
+    public void mostrarNomSurtidor(String nomSurtidor) {
+
+    }
 }
