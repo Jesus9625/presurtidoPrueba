@@ -25,6 +25,7 @@ public class PruebasActivity extends AppCompatActivity implements PruebasView {
     TextView lblNomSurt;
 
     private PruebasViewPresenter viewPresenter;
+    private PruebasView view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,6 @@ public class PruebasActivity extends AppCompatActivity implements PruebasView {
 
     @Override
     public void mostrarNomSurtidor(String nomSurtidor) {
-
+        lblNomSurt.setText(nomSurtidor);
     }
 }

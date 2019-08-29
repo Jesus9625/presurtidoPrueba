@@ -29,6 +29,6 @@ public class PruebasPresenter implements PruebasViewPresenter, PruebasObtainer {
 
     @Override
     public void responseValidarNomSurtidor(String nomSurtidor) {
-
+        view.mostrarNomSurtidor(nomSurtidor);
     }
 }
