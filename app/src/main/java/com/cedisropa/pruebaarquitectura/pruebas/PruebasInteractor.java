@@ -49,6 +49,7 @@ public class PruebasInteractor implements  PruebasProvider {
 
                 if(data.getStatus() == 1) {
                     String nomSurtidor = data.getData().get("nomSurtidor").getAsString();
+                    obtainer.responseValidarNomSurtidor(nomSurtidor);
                 } else {
 
                 }
